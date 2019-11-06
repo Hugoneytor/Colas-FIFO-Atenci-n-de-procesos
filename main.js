@@ -16,12 +16,12 @@ class Main{
             let numProcesos = 0;
 
             let ciclosFaltantes = 0;
-            
+
             for(let i=0;i<300;i++){
                 if(dado.Lanzar()<=39){
                     this.nuevoProceso(new Proceso('proceso '+numDeProceso, Math.trunc(Math.random()*11)+4));
                     console.log('se ha agregado un nuevo proceso');
-                    a++;
+                    numDeProceso++;
                 }
                 if(this._Actual!==null){
                     this._Actual.numCiclos -=1;
@@ -38,7 +38,7 @@ class Main{
             let incompletos = this._Actual;
             while(incompletos!==null){
                 numProcesos++;
-                ciclosFaltantes+=this._Actual.ciclo;
+                ciclosFaltantes+=this._Actual.numCiclos;
                 incompletos = incompletos.siguiente;
             }
             console.log('Cola vacía durante ' + contador + ' ciclos');
