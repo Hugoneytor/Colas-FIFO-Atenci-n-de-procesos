@@ -13,7 +13,7 @@ class Main{
 
             let numDeProceso = 1;
 
-            let numProcesos = 0;
+            let numProcesosInc = 0;
 
             let ciclosFaltantes = 0;
 
@@ -37,13 +37,13 @@ class Main{
             }
             let incompletos = this._Actual;
             while(incompletos!==null){
-                numProcesos++;
+                numProcesosInc++;
                 ciclosFaltantes+=this._Actual.numCiclos;
                 incompletos = incompletos.siguiente;
             }
             console.log('Cola vacía durante ' + contador + ' ciclos');
             console.log('Número de procesos completados: '+ conFinal);
-            console.log('Procesos que no terminaron: '+ numProcesos);
+            console.log('Procesos que no terminaron: '+ numProcesosInc);
             console.log('Suma de los ciclos pendientes: ' + ciclosFaltantes);          
         })
         
